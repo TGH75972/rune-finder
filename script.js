@@ -54,15 +54,18 @@ const runeCampingData = {
 document.getElementById("findRune").addEventListener("click", function() {
     const area = document.getElementById("area").value.trim();
     const resultDiv = document.getElementById("result");
+    const runeSound = document.getElementById("runeSound");
     resultDiv.innerHTML = ""; 
 
     if (runeCampingData[area]) {
         const farms = runeCampingData[area];
         farms.forEach(farm => {
-            resultDiv.innerHTML += `
-                ${farm.name}: ${farm.location} <br>
-            `;
+            const div = document.createElement("div");
+            div.className = "result-item";
+            div.textContent = `${farm.name}: ${farm.location}`;
+            resultDiv.appendChild(div);
         });
+        runeSound.play();
     } else {
         resultDiv.innerHTML = "Area not found. Please check your spelling.";
     }
