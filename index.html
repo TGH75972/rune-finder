@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Rune Farm</title>
+    <title>Elden Ring Rune Finder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Enter your area, Tarnished</h1>
+        <h1>Elden Ring <span>Rune Finder</span></h1>
+        <label for="area">Enter your area, tarnished!</label>
+        <input type="text" id="area" placeholder="e.g., Limgrave">
+        <button id="findRune">Find Nearest Rune</button>
         <img src="rune.jpg" alt="Rune" class="rune-image">
-        <input type="text" id="area" placeholder="Enter area name">
-        <button id="findRune">Find Rune Farms</button>
         <div id="result"></div>
         <audio id="runeSound" src="rune.mp3"></audio>
     </div>
