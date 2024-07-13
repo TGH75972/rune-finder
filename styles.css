@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
     transition: background-color 0.3s ease;
 }
 
@@ -16,6 +17,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    max-height: 90vh;
+    margin: 100px;
+    overflow-y: auto;
 }
 
 .container:hover {
@@ -23,13 +27,13 @@ body {
 }
 
 h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 20px;
-    margin: 40px;
+    margin: 40px 0 20px 0;
 }
 
 .rune-image {
-    width: 200px;
+    display: none; 
+    margin: 10px auto; 
+    width: 300px;
     border-radius: 15px;
     height: 200px;
     margin-bottom: 20px;
@@ -51,7 +55,6 @@ input[type="text"]:focus {
 }
 
 button {
-    margin: 10px;
     padding: 10px 15px;
     background-color: #ff5a23;
     color: white;
@@ -83,7 +86,7 @@ button:hover {
 }
 
 #area {
-    margin: 25px;
+    margin: 25px 0;
 }
 
 label {
