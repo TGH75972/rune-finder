@@ -68,28 +68,25 @@ const runeCampingData = {
         {"name": "Fallen Leaves", "location": "Defeat enemies for a good yield."}
     ],
     "Nokron, Eternal City": [
-        {"name": "Nokron Ruins", "location": "Farm runes from enemies here."},
-        {"name": "Night's Sacred Ground", "location": "Defeat enemies for high rune yield."}
+        {"name": "Nokron Ruins", "location": "Farm from the enemies within the ruins."},
+        {"name": "Night's Sacred Ground", "location": "Defeat enemies for rune drops."}
     ],
-    "Nokstella": [
-        {"name": "Nokstella Waters", "location": "Farm runes from enemies in the water."},
-        {"name": "Nokstella River", "location": "Defeat enemies for runes."}
+    "Siofra River": [
+        {"name": "Siofra Basin", "location": "Farm enemies for steady runes."},
+        {"name": "Below the Well", "location": "Defeat enemies for good rune gains."}
     ],
-    "Crumbling Farum Azula": [
-        {"name": "Azula's Crumbling Ruins", "location": "Farm from the enemies in ruins."},
-        {"name": "Stormveil Cliff", "location": "Defeat enemies near the cliffs for runes."}
-    ],
-    "Mohgwyn Palace": [
-        {"name": "Moghwyn's Palace", "location": "Use the jump bug for efficient farming."},
-        {"name": "Palace Rooftops", "location": "Defeat enemies on rooftops for easy runes."}
+    "Deeproot Depths": [
+        {"name": "Nameless Eternal City", "location": "Farm runes from enemies."},
+        {"name": "Depths of Deeproot", "location": "Defeat enemies for rune pickups."}
     ]
 };
-
 
 document.getElementById("findRune").addEventListener("click", function() {
     const area = document.getElementById("area").value.trim();
     const resultDiv = document.getElementById("result");
     const runeSound = document.getElementById("runeSound");
+    const runeImage = document.getElementsByClassName("rune-image")[0];
+
     resultDiv.innerHTML = ""; 
 
     if (runeCampingData[area]) {
@@ -101,7 +98,15 @@ document.getElementById("findRune").addEventListener("click", function() {
             resultDiv.appendChild(div);
         });
         runeSound.play();
+
+        const imageName = area === "Stormveil Castle" ? "Stormveil_Castle.jpg" : `${area}.jpg`;
+        runeImage.src = imageName;
+        runeImage.alt = area;
+        runeImage.style.display = "block"; 
     } else {
         resultDiv.innerHTML = "Area not found. Please check your spelling.";
+        runeImage.src = "rune.jpg"; 
+        runeImage.alt = "Rune"; 
+        runeImage.style.display = "block"; 
     }
 });
